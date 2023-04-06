@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Container from "@mui/material/Container";
+import FormHead from "./FormHead";
+import FormCalendar from "./FormCalendar";
+
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<LocalizationProvider dateAdapter={AdapterMoment}>
+				<Container maxWidth="md">
+					<FormHead></FormHead>
+
+					<FormCalendar></FormCalendar>
+				</Container>
+			</LocalizationProvider>
+		</div>
+	);
 }
 
 export default App;
